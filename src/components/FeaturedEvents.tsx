@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import EventCard from "./EventCard";
@@ -14,21 +13,21 @@ interface FeaturedEventsProps {
 
 const FeaturedEvents = ({ title, description, events, showViewAll = true }: FeaturedEventsProps) => {
   const [scrollPosition, setScrollPosition] = useState(0);
-  
+
   const scroll = (direction: 'left' | 'right') => {
     const container = document.getElementById('events-container-' + title.replace(/\s+/g, '-').toLowerCase());
     if (!container) return;
-    
+
     const scrollAmount = container.clientWidth * 0.8;
-    const newPosition = direction === 'left' 
+    const newPosition = direction === 'left'
       ? Math.max(scrollPosition - scrollAmount, 0)
       : Math.min(scrollPosition + scrollAmount, container.scrollWidth - container.clientWidth);
-    
+
     container.scrollTo({
       left: newPosition,
       behavior: 'smooth'
     });
-    
+
     setScrollPosition(newPosition);
   };
 
@@ -63,7 +62,7 @@ const FeaturedEvents = ({ title, description, events, showViewAll = true }: Feat
           }}
         >
           {events.map((event) => (
-            <div key={event.id} className="min-w-[100px] sm:min-w-[120px] md:min-w-[250px] flex-shrink-0">
+            <div key={event.id} className="min-w-[140px] sm:min-w-[160px] md:min-w-[180px] flex-shrink-0">
               <EventCard event={event} featured={event.featured} />
             </div>
           ))}
