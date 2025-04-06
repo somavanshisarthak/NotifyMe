@@ -63,7 +63,7 @@ const FeaturedEvents = ({ title, description, events, showViewAll = true }: Feat
           }}
         >
           {events.map((event) => (
-            <div key={event.id} className="min-w-[160px] sm:min-w-[180px] md:min-w-[250px] flex-shrink-0">
+            <div key={event.id} className="min-w-[100px] sm:min-w-[120px] md:min-w-[250px] flex-shrink-0">
               <EventCard event={event} featured={event.featured} />
             </div>
           ))}
