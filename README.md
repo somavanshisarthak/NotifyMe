@@ -5,3 +5,4 @@ This project is built with:
 - React
 - shadcn-ui
 - Tailwind CSS
+https://notify-me-puce.vercel.app/
